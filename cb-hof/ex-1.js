@@ -1,4 +1,4 @@
-console.log("Hello, world!");
+//console.log("Hello, world!");
 
 // Challenge 1
 function addTwo(num) {
@@ -6,8 +6,8 @@ function addTwo(num) {
 }
 
 // To check if you've completed it, uncomment these console.logs!
-console.log(addTwo(3));
-console.log(addTwo(10));
+//console.log(addTwo(3));
+//console.log(addTwo(10));
 
 // Challenge 2
 function addS(word) {
@@ -15,8 +15,8 @@ function addS(word) {
 }
 
 // uncomment these to check your work
-console.log(addS("pizza"));
-console.log(addS("bagel"));
+//console.log(addS("pizza"));
+//console.log(addS("bagel"));
 
 // Challenge 3
 function map(array, callback) {
@@ -27,7 +27,7 @@ function map(array, callback) {
   return results;
 }
 
-console.log(map([1, 2, 3], addTwo));
+//console.log(map([1, 2, 3], addTwo));
 
 // Challenge 4
 function forEach(array, callback) {
@@ -38,22 +38,45 @@ function forEach(array, callback) {
 
 // see for yourself if your forEach works!
 
-var alphabet = "";
-var letters = ["a", "b", "c", "d"];
-forEach(letters, function(char) {
-  alphabet += char;
-});
-console.log(alphabet); //prints 'abcd'
+// var alphabet = "";
+// var letters = ["a", "b", "c", "d"];
+// forEach(letters, function(char) {
+//   alphabet += char;
+// });
+// console.log(alphabet); //prints 'abcd'
 
 //--------------------------------------------------
 // Extension
 //--------------------------------------------------
 
 //Extension 1
-function mapWith(array, callback) {}
+function mapWith(array, callback) {
+  const results = [];
+  forEach(array, el => {
+    results.push(callback(el));
+  });
+  return results;
+}
+
+//console.log(mapWith([1, 2, 3], addTwo));
 
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function reduce(array, callback, initialValue) {
+  let accu = initialValue;
+  forEach(array, el => {
+    accu = callback(accu, el);
+  });
+  // for (let el of array) {
+  //   accu = callback(accu, el);
+  // }
+  return accu;
+}
+
+var nums = [4, 1, 3];
+var add = function(a, b) {
+  return a + b;
+};
+console.log(reduce(nums, add, 0)); //-> 8
 
 //Extension 3
 function intersection(arrays) {}
