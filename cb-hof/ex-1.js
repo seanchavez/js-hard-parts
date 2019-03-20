@@ -66,9 +66,6 @@ function reduce(array, callback, initialValue) {
   forEach(array, el => {
     accu = callback(accu, el);
   });
-  // for (let el of array) {
-  //   accu = callback(accu, el);
-  // }
   return accu;
 }
 
@@ -79,10 +76,42 @@ var add = function(a, b) {
 console.log(reduce(nums, add, 0)); //-> 8
 
 //Extension 3
-function intersection(arrays) {}
+function intersection(arrays) {
+  //   const args = Array.from(arguments);
+  //   let results = args.slice(0, 1);
+  //   console.log(results);
+  //   for (let i = 1; i < args.length; i++) {
+  //     for (let j = 0; j < results.length; j++) {
+  //       if (!args[i].includes(results[j])) {
+  //         results.splice(j, 1);
+  //       }
+  //     }
+  //   }
+  //   return results;
 
-// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
-// should log: [5, 15]
+  const args = Array.from(arguments);
+  const results = [];
+  for (i = 0; i < args[0].length; i++) {
+    let match = false;
+    for (j = 1; j < args.length; j++) {
+      if (args[j].includes(args[0][i])) {
+        match = true;
+      } else {
+        match = false;
+        break;
+      }
+    }
+    if (match) {
+      results.push(args[0][i]);
+    }
+  }
+  return results;
+}
+
+console.log(
+  intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
+);
+//should log: [5, 15]
 
 //Extension 4
 function union(arrays) {}
