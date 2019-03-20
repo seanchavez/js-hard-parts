@@ -77,18 +77,6 @@ console.log(reduce(nums, add, 0)); //-> 8
 
 //Extension 3
 function intersection(arrays) {
-  //   const args = Array.from(arguments);
-  //   let results = args.slice(0, 1);
-  //   console.log(results);
-  //   for (let i = 1; i < args.length; i++) {
-  //     for (let j = 0; j < results.length; j++) {
-  //       if (!args[i].includes(results[j])) {
-  //         results.splice(j, 1);
-  //       }
-  //     }
-  //   }
-  //   return results;
-
   const args = Array.from(arguments);
   const results = [];
   for (i = 0; i < args[0].length; i++) {
@@ -114,9 +102,20 @@ console.log(
 //should log: [5, 15]
 
 //Extension 4
-function union(arrays) {}
+function union(arrays) {
+  args = Array.from(arguments);
+  const results = [];
+  for (i = 0; i < args.length; i++) {
+    for (let j = 0; j < args[i].length; j++) {
+      if (!results.includes(args[i][j])) {
+        results.push(args[i][j]);
+      }
+    }
+  }
+  return results;
+}
 
-// console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
