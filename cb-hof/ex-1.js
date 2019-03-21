@@ -119,9 +119,25 @@ console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
-function objOfMatches(array1, array2, callback) {}
+function objOfMatches(array1, array2, callback) {
+  const matches = {};
+  for (i = 0; i < array1.length; i++) {
+    if (array1[i] === array2[i].toLowerCase()) {
+      matches[array1[i]] = callback(array2[i]);
+    }
+  }
+  return matches;
+}
 
-// console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
+console.log(
+  objOfMatches(
+    ["hi", "howdy", "bye", "later", "hello"],
+    ["HI", "Howdy", "BYE", "LATER", "hello"],
+    function(str) {
+      return str.toUpperCase();
+    }
+  )
+);
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 //Extension 6
