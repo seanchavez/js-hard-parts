@@ -48,22 +48,34 @@ console.log(addByTwo(1));
 console.log(addByTwo(2));
 console.log(addByTwo(3));
 
-// now call addByTwo with an input of 1
+const addByThree = addByX(3);
+console.log(addByThree(1));
+console.log(addByThree(2));
 
-// now call addByTwo with an input of 2
+const addByFour = addByX(4);
+console.log(addByFour(4));
+console.log(addByFour(10));
 
 //--------------------------------------------------
 // Extension
 //--------------------------------------------------
 
-function once(func) {}
+function once(func) {
+  let what;
+  const inner = input => {
+    if (!what) what = func(input);
+
+    return what;
+  };
+  return inner;
+}
 
 var onceFunc = once(addByTwo);
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
-// console.log(onceFunc(4));  //should log 6
-// console.log(onceFunc(10));  //should log 6
-// console.log(onceFunc(9001));  //should log 6
+console.log(onceFunc(4)); //should log 6
+console.log(onceFunc(10)); //should log 6
+console.log(onceFunc(9001)); //should log 6
 
 function after(count, func) {}
 
