@@ -77,15 +77,26 @@ console.log(onceFunc(4)); //should log 6
 console.log(onceFunc(10)); //should log 6
 console.log(onceFunc(9001)); //should log 6
 
-function after(count, func) {}
+function after(count, func) {
+  let counter = count;
+  const inner = () => {
+    if (counter === 1) {
+      return func();
+    } else {
+      counter--;
+      console.log("nothing lol");
+    }
+  };
+  return inner;
+}
 
 var called = function() {
   console.log("hello");
 };
 var afterCalled = after(3, called);
 
-// afterCalled(); // -> nothing is printed
-// afterCalled(); // -> nothing is printed
-// afterCalled(); // -> 'hello' is printed
+afterCalled(); // -> nothing is printed
+afterCalled(); // -> nothing is printed
+afterCalled(); // -> 'hello' is printed
 
 function delay(func, wait) {}
