@@ -90,13 +90,22 @@ function after(count, func) {
   return inner;
 }
 
-var called = function() {
+const called = function() {
   console.log("hello");
 };
-var afterCalled = after(3, called);
+const afterCalled = after(3, called);
 
 afterCalled(); // -> nothing is printed
 afterCalled(); // -> nothing is printed
 afterCalled(); // -> 'hello' is printed
 
-function delay(func, wait) {}
+function delay(func, wait) {
+  const inner = () => {
+    setTimeout(() => func(), wait);
+  };
+  return inner;
+}
+
+const shutup = delay(() => console.log("Shut UP!"), 3000);
+
+shutup();
