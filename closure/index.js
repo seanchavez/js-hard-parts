@@ -33,16 +33,20 @@ var jasCounter = outer();
 // Uncomment each of these lines one by one.
 // Before your do, guess what will be logged from each function call.
 
-// willCounter();
-// willCounter();
-// willCounter();
+willCounter();
+willCounter();
+willCounter();
+jasCounter();
+willCounter();
 
-// jasCounter();
-// willCounter();
+function addByX(x) {
+  return input => input + x;
+}
 
-function addByX(x) {}
-
-var addByTwo = addByX(2);
+const addByTwo = addByX(2);
+console.log(addByTwo(1));
+console.log(addByTwo(2));
+console.log(addByTwo(3));
 
 // now call addByTwo with an input of 1
 
