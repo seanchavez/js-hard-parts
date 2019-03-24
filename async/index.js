@@ -47,7 +47,7 @@ function limitedRepeat() {
   setTimeout(() => clearInterval(intervalID), 5000);
 }
 // Uncomment the following line to check your work!
-//limitedRepeat(); // should log (every second, for 5 seconds): hi for now
+limitedRepeat(); // should log (every second, for 5 seconds): hi for now
 
 /* CHALLENGE 6 */
 
