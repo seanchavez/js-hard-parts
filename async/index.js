@@ -31,18 +31,23 @@ helloGoodbye(); // should log: hello // should also log (after 3 seconds): good 
 /* CHALLENGE 4 */
 
 function brokenRecord() {
-  // ADD CODE HERE
+  setInterval(() => {
+    console.log("hi again");
+  }, 1000);
 }
 // Uncomment the following line to check your work!
-// brokenRecord(); // should log (every second): hi again
+//brokenRecord(); // should log (every second): hi again
 
 /* CHALLENGE 5 */
 
 function limitedRepeat() {
-  // ADD CODE HERE
+  const intervalID = setInterval(() => {
+    console.log("hi for now");
+  }, 1000);
+  setTimeout(() => clearInterval(intervalID), 5000);
 }
 // Uncomment the following line to check your work!
-// limitedRepeat(); // should log (every second, for 5 seconds): hi for now
+limitedRepeat(); // should log (every second, for 5 seconds): hi for now
 
 /* CHALLENGE 6 */
 
