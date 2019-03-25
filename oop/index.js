@@ -28,24 +28,28 @@ console.log(vicky.age); // -> Logs 24
 /*** CHALLENGE 1 of 3 ***/
 
 var personStore = {
-  // add code here
+  greet: () => console.log("hello")
 };
 
 // /********* Uncomment this line to test your work! *********/
-// personStore.greet(); // -> Logs 'hello'
+personStore.greet(); // -> Logs 'hello'
 
 /*** CHALLENGE 2 of 3 ***/
 
 function personFromPersonStore(name, age) {
-  // add code here
+  const person = Object.create(personStore);
+  person.name = name;
+  person.age = age;
+
+  return person;
 }
 
 var sandra = personFromPersonStore("Sandra", 26);
 
 // /********* Uncomment these lines to test your work! *********/
-// console.log(sandra.name); // -> Logs 'Sandra'
-// console.log(sandra.age); //-> Logs 26
-// sandra.greet(); //-> Logs 'hello'
+console.log(sandra.name); // -> Logs 'Sandra'
+console.log(sandra.age); //-> Logs 26
+sandra.greet(); //-> Logs 'hello'
 
 /*** CHALLENGE 3 of 3 ***/
 
