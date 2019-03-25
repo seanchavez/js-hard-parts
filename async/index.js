@@ -26,7 +26,7 @@ function helloGoodbye() {
   console.log("hello");
 }
 // Uncomment the following line to check your work!
-//helloGoodbye(); // should log: hello // should also log (after 3 seconds): good bye
+helloGoodbye(); // should log: hello // should also log (after 3 seconds): good bye
 
 /* CHALLENGE 4 */
 
