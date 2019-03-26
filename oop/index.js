@@ -160,9 +160,10 @@ function adminFactory(name, score) {
 }
 
 /* Put code here for a method called sharePublicMessage*/
+adminFunctionStore.sharePublicMessage = () => console.log("Welcome users!");
 
 var adminFromFactory = adminFactory("Eva", 5);
 
 // /********* Uncomment these lines to test your work! *********/
 adminFromFactory.sayType(); // -> Logs "I am a Admin"
-// adminFromFactory.sharePublicMessage() // -> Logs "Welcome users!"
+adminFromFactory.sharePublicMessage(); // -> Logs "Welcome users!"
