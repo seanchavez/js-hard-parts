@@ -96,6 +96,7 @@ PersonConstructor.prototype.introduce = function() {
 };
 
 mike.introduce(); // -> Logs 'Hi, my name is Mike'
+console.log(PersonConstructor.prototype);
 
 /****************************************************************
                         USING ES6 CLASSES
@@ -104,25 +105,31 @@ mike.introduce(); // -> Logs 'Hi, my name is Mike'
 /*** CHALLENGE 1 of 3 ***/
 
 class PersonClass {
-  constructor() {
-    // add code here
+  constructor(name) {
+    this.name = name;
   }
 
-  // add code here
+  greet() {
+    console.log("hello");
+  }
 }
 
 // /********* Uncomment this line to test your work! *********/
 var george = new PersonClass();
-// george.greet(); // -> Logs 'hello'
+george.greet(); // -> Logs 'hello'
 
 /*** CHALLENGE 2 of 3 ***/
 
-// add code here
+class DeveloperClass extends PersonClass {
+  introduce() {
+    console.log("Hello World, my name is ", this.name);
+  }
+}
 
 // /********* Uncomment these lines to test your work! *********/
-// var thai = new DeveloperClass('Thai', 32);
-// console.log(thai.name); // -> Logs 'Thai'
-// thai.introduce(); //-> Logs 'Hello World, my name is Thai'
+var thai = new DeveloperClass("Thai", 32);
+console.log(thai.name); // -> Logs 'Thai'
+thai.introduce(); //-> Logs 'Hello World, my name is Thai'
 
 /****************************************************************
                       EXTENSION: SUBCLASSING
