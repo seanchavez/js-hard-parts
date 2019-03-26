@@ -149,10 +149,14 @@ function userFactory(name, score) {
   return user;
 }
 
-var adminFunctionStore /* Put code here */;
+var adminFunctionStore = userFunctionStore;
 
 function adminFactory(name, score) {
-  // Put code here
+  const admin = new userFactory(name, score);
+  admin.type = "Admin";
+  admin.prototype = adminFunctionStore;
+
+  return admin;
 }
 
 /* Put code here for a method called sharePublicMessage*/
@@ -160,5 +164,5 @@ function adminFactory(name, score) {
 var adminFromFactory = adminFactory("Eva", 5);
 
 // /********* Uncomment these lines to test your work! *********/
-// adminFromFactory.sayType() // -> Logs "I am a Admin"
+adminFromFactory.sayType(); // -> Logs "I am a Admin"
 // adminFromFactory.sharePublicMessage() // -> Logs "Welcome users!"
