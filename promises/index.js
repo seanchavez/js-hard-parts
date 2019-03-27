@@ -20,7 +20,9 @@ promise = new Promise(function(resolve, reject) {
 }).then(result => console.log(result));
 
 // Should print out "Reject!"
-// ADD CODE HERE
+const rejProm = new Promise((resolve, reject) => reject("Rejected!")).catch(
+  result => console.log(result)
+);
 
 // Challenge 4
 
