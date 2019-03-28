@@ -70,5 +70,7 @@ const fakeAPICall = i => {
 };
 
 function getAllData() {
-  // CODE GOES HERE
+  return Promise.all([fakeAPICall(0), fakeAPICall(1), fakeAPICall(2)]);
 }
+
+getAllData().then(console.log);
