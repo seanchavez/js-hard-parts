@@ -1,24 +1,33 @@
 // CHALLENGE 1
 
 function sumFunc(arr) {
-  // YOUR CODE HERE
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
 }
 
 // Uncomment the lines below to test your work
-// const array = [1, 2, 3, 4];
-// console.log(sumFunc(array)); // -> should log 10
+const array = [1, 2, 3, 4];
+console.log(sumFunc(array)); // -> should log 10
 
 function returnIterator(arr) {
-  // YOUR CODE HERE
+  let i = 0;
+  return () => {
+    const element = arr[i];
+    i++;
+    return element;
+  };
 }
 
 // Uncomment the lines below to test your work
-// const array2 = ['a', 'b', 'c', 'd'];
-// const myIterator = returnIterator(array2);
-// console.log(myIterator()); // -> should log 'a'
-// console.log(myIterator()); // -> should log 'b'
-// console.log(myIterator()); // -> should log 'c'
-// console.log(myIterator()); // -> should log 'd'
+const array2 = ["a", "b", "c", "d"];
+const myIterator = returnIterator(array2);
+console.log(myIterator()); // -> should log 'a'
+console.log(myIterator()); // -> should log 'b'
+console.log(myIterator()); // -> should log 'c'
+console.log(myIterator()); // -> should log 'd'
 
 // CHALLENGE 2
 
@@ -88,16 +97,16 @@ Words.prototype[Symbol.iterator] = function() {
 
 function valueAndPrevIndex(array) {}
 
-const returnedSentence = valueAndPrevIndex([4, 5, 6]);
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
+// const returnedSentence = valueAndPrevIndex([4, 5, 6]);
+// console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence());
 
 //CHALLENGE 8
 
 function* createConversation(string) {}
 
-console.log(createConversation("english").next());
+// console.log(createConversation("english").next());
 
 //CHALLENGE 9
 function waitForVerb(noun) {}
