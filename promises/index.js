@@ -46,8 +46,10 @@ delay().then(sayHello);
 // Challenge 6
 //
 // ADD CODE BELOW
-// var secondPromise =
-// var firstPromise =
+const secondPromise = new Promise((resolve, reject) => resolve("Second!"));
+const firstPromise = new Promise((resolve, reject) => resolve(secondPromise));
+
+firstPromise.then(result => console.log(result));
 
 // Challenge 7
 const fakePeople = [
