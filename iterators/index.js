@@ -127,12 +127,24 @@ for (word of helloWorld) {
 
 // CHALLENGE 7
 
-function valueAndPrevIndex(array) {}
+function valueAndPrevIndex(array) {
+  const iterator = indexIterator(array);
+  return {
+    sentence: () => {
+      const elWithIndex = iterator.next();
+      if (elWithIndex[0] === 0) {
+        return `${elWithIndex[1]} is the first element.`;
+      } else {
+        return `${elWithIndex[1]} was found after index ${elWithIndex[0] - 1}.`;
+      }
+    }
+  };
+}
 
-// const returnedSentence = valueAndPrevIndex([4, 5, 6]);
-// console.log(returnedSentence.sentence());
-// console.log(returnedSentence.sentence());
-// console.log(returnedSentence.sentence());
+const returnedSentence = valueAndPrevIndex([4, 5, 6]);
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
 
 //CHALLENGE 8
 
