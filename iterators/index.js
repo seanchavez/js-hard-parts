@@ -52,13 +52,21 @@ console.log(iteratorWithNext.next()); // -> should log 3
 // CHALLENGE 3
 
 function sumArray(arr) {
-  // YOUR CODE HERE
-  // use your nextIterator function
+  let sum = 0;
+  const iteratorWithNext = nextIterator(arr);
+  while (iteratorWithNext) {
+    value = iteratorWithNext.next();
+    if (value) {
+      sum += value;
+    } else {
+      return sum;
+    }
+  }
 }
 
 // Uncomment the lines below to test your work
-// const array4 = [1, 2, 3, 4];
-// console.log(sumArray(array4)); // -> should log 10
+const array4 = [1, 2, 3, 4];
+console.log(sumArray(array4)); // -> should log 10
 
 // CHALLENGE 4
 
