@@ -27,7 +27,7 @@ const myIterator = returnIterator(array2);
 console.log(myIterator()); // -> should log 'a'
 console.log(myIterator()); // -> should log 'b'
 console.log(myIterator()); // -> should log 'c'
-console.log(myIterator()); // -> should log 'd'
+//console.log(myIterator()); // -> should log 'd'
 
 // CHALLENGE 2
 
