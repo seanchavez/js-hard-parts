@@ -71,15 +71,20 @@ console.log(sumArray(array4)); // -> should log 10
 // CHALLENGE 4
 
 function setIterator(set) {
-  // YOUR CODE HERE
+  const iterator = set.values();
+  return {
+    next: () => {
+      return iterator.next().value;
+    }
+  };
 }
 
 // Uncomment the lines below to test your work
-// const mySet = new Set('hey');
-// const iterateSet = setIterator(mySet);
-// console.log(iterateSet.next()); // -> should log 'h'
-// console.log(iterateSet.next()); // -> should log 'e'
-// console.log(iterateSet.next()); // -> should log 'y'
+const mySet = new Set("hey");
+const iterateSet = setIterator(mySet);
+console.log(iterateSet.next()); // -> should log 'h'
+console.log(iterateSet.next()); // -> should log 'e'
+console.log(iterateSet.next()); // -> should log 'y'
 
 // CHALLENGE 5
 
