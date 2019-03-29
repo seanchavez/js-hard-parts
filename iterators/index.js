@@ -112,13 +112,18 @@ function Words(string) {
   this.str = string;
 }
 
-Words.prototype[Symbol.iterator] = function() {
-  // YOUR CODE HERE
+Words.prototype[Symbol.iterator] = function*() {
+  const words = this.str.split(" ");
+  for (let word of words) {
+    yield word;
+  }
 };
 
 // Uncomment the lines below to test your work
-// const helloWorld = new Words('Hello World');
-// for (word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
+const helloWorld = new Words("Hello World");
+for (word of helloWorld) {
+  console.log(word);
+} // -> should log 'Hello' and 'World'
 
 // CHALLENGE 7
 
