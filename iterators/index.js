@@ -148,7 +148,17 @@ console.log(returnedSentence.sentence());
 
 //CHALLENGE 8
 
-function* createConversation(string) {}
+function* createConversation(string) {
+  return {
+    next: setInterval(() => {
+      if (string === "english") {
+        console.log("hello there");
+      } else {
+        console.log("gibberish");
+      }
+    }, 3000)
+  };
+}
 
 // console.log(createConversation("english").next());
 
