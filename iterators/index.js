@@ -149,22 +149,32 @@ console.log(returnedSentence.sentence());
 //CHALLENGE 8
 
 function* createConversation(string) {
-  return {
-    next: setInterval(() => {
-      if (string === "english") {
-        console.log("hello there");
-      } else {
-        console.log("gibberish");
-      }
-    }, 3000)
-  };
+  yield string === "english"
+    ? setInterval(() => console.log("hello there"), 3000)
+    : setInterval(() => console.log("gibberish"), 3000);
+
+  // return {
+  //   next: yield string === "english"
+  //     ? console.log("hello there")
+  //     : console.log("gibberish")
+
+  //   // () => {
+  //   //   setInterval(() => {
+  //   //     if (string === "english") {
+  //   //       console.log("hello there");
+  //   //     } else {
+  //   //       console.log("gibberish");
+  //   //     }
+  //   //   }, 3000);
+  //   // }
+  // };
 }
 
-// console.log(createConversation("english").next());
+console.log(createConversation("english").next());
 
 //CHALLENGE 9
-function waitForVerb(noun) {}
+// function waitForVerb(noun) {}
 
-async function f(noun) {}
+// async function f(noun) {}
 
-f("dog");
+// f("dog");
