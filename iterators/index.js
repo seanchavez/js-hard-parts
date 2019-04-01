@@ -158,18 +158,13 @@ function* createConversation(string) {
 
 //CHALLENGE 9
 function waitForVerb(noun) {
-  //let result = noun;
-  //setTimeout(() => (result += " goes"));
-  //return result;
-  //return noun + "goes";
-  setTimeout(() => console.log(noun + " goes"), 3000);
+  return noun + " goes";
+  //setTimeout(() => console.log(noun + " goes"), 3000);
 }
 
 async function f(noun) {
-  await waitForVerb(noun);
-  //console.log(await waitForVerb(noun));
-  // const result = await setTimeout()
-  // console.log(await waitForVerb(noun));
+  await setTimeout(() => console.log(waitForVerb(noun)), 3000);
+  //await waitForVerb(noun);
 }
 
 f("dog");
