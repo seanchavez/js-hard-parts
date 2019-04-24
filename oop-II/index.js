@@ -49,7 +49,11 @@ sandra.greet(); //-> Logs 'hello'
 
 /*** CHALLENGE 3 of 3 ***/
 
-personStore.introduce = () => console.log("THIS: ", this); //console.log(`Hi, my mame is ${this.name}`);
+personStore.introduce = function() {
+  console.log("THIS: ", this);
+  console.log(`Hi, my mame is ${this.name}`);
+  ``;
+};
 
 sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
@@ -60,12 +64,12 @@ sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 /*** CHALLENGE 1 of 3 ***/
 
 function PersonConstructor() {
-  // add code here
+  this.greet = () => console.log("hello");
 }
 
 // /********* Uncomment this line to test your work! *********/
 var simon = new PersonConstructor();
-// simon.greet(); // -> Logs 'hello'
+simon.greet(); // -> Logs 'hello'
 
 /*** CHALLENGE 2 of 3 ***/
 
