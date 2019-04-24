@@ -49,9 +49,9 @@ sandra.greet(); //-> Logs 'hello'
 
 /*** CHALLENGE 3 of 3 ***/
 
-// add code here
+personStore.introduce = () => console.log("THIS: ", this); //console.log(`Hi, my mame is ${this.name}`);
 
-// sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
+sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
 /****************************************************************
                     USING THE 'NEW' KEYWORD
