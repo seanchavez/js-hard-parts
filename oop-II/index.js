@@ -148,7 +148,7 @@ function userFactory(name, score) {
   return user;
 }
 
-var adminFunctionStore /* Put code here */;
+var adminFunctionStore = new userFunctionStore();
 
 function adminFactory(name, score) {
   // Put code here
