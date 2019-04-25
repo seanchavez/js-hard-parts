@@ -151,7 +151,7 @@ function userFactory(name, score) {
 var adminFunctionStore = new userFunctionStore();
 
 function adminFactory(name, score) {
-  // Put code here
+  code;
 }
 
 /* Put code here for a method called sharePublicMessage*/
