@@ -136,7 +136,7 @@ thai.introduce(); //-> Logs 'Hello World, my name is Thai'
 
 var userFunctionStore = {
   sayType: function() {
-    console.log("I'm a " + this.type);
+    console.log("I am a " + this.type);
   }
 };
 
