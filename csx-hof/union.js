@@ -1,11 +1,9 @@
 function union(arrays) {
   const flattened = arrays.reduce((acc, cv) => {
-    cv.forEach((el, i) => {
-      if (acc.includes(el)) {
-        cv.splice(i, 1);
-      }
+    const results = cv.filter((el, i) => {
+      return !acc.includes(el);
     });
-    return acc.concat(cv);
+    return acc.concat(results);
   });
   return flattened;
 }
