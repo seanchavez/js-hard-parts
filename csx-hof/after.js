@@ -1,10 +1,10 @@
 function after(num, cb) {
   let callCount = 0;
-  return (...args) => {
-    if (callCount >= num) {
-      cb(...args);
-    }
+  return arg => {
     callCount++;
+    if (callCount >= num) {
+      return cb(arg);
+    }
   };
 }
 
