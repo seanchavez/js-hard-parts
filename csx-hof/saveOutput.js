@@ -19,13 +19,12 @@ console.log(multBy2AndLog(9)); // should log: 18
 console.log(multBy2AndLog("boo")); // should log: { 2: 4, 9: 18 }
 
 function cycleIterator(arr) {
-  let i = -1;
+  let i = 0;
   return () => {
-    i++;
     if (i === arr.length) {
       i = 0;
     }
-    return arr[i];
+    return arr[i++];
   };
 }
 
