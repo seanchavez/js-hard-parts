@@ -4,16 +4,27 @@ function censor() {
     if (str1 && str2) {
       pairs[str1] = str2;
     } else if (str1) {
-      const result = str1
-        .split("")
-        .map(char => {
-          if (pairs.hasOwnProperty(char)) {
-            char = pairs[char];
+      console.log(pairs);
+      const props = Object.getOwnPropertyNames(pairs);
+      console.log(props);
+      const strArr = str1.split(" ");
+
+      for (key in pairs) {
+        strArr.forEach((str, i, arr) => {
+          if (str.startsWith(key)) {
+            arr[i] = pairs[key];
           }
-          return char;
-        })
-        .join("");
-      return result;
+        });
+      }
+
+      // results = strArr.map((char, i, arr) => {
+      //   console.log("char ", char);
+      //   if (props.includes(char)) {
+      //     strApp[i] = pairs[char];
+      //   }
+      //   return arr[i];
+      // });
+      return strArr.join(" ");
     }
   };
 }
