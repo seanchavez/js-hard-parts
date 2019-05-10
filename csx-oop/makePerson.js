@@ -25,7 +25,7 @@ function personFromPersonStore(name, age) {
   return person;
 }
 
-const sandra = personFromPersonStore("Sandra", 26);
+const sandra = personFromPersonStore("Sandra", 32);
 
 console.log(sandra.name); // -> Logs 'Sandra'
 console.log(sandra.age); // -> Logs 26
