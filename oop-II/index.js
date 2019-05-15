@@ -5,14 +5,17 @@
 /*** CHALLENGE 1 of 1 ***/
 
 function makePerson(name, age) {
-  // add code here
+  const person = {};
+  person.name = name;
+  person.age = age;
+  return person;
 }
 
 var vicky = makePerson("Vicky", 24);
 
 // /********* Uncomment these lines to test your work! *********/
-// console.log(vicky.name); // -> Logs 'Vicky'
-// console.log(vicky.age); // -> Logs 24
+console.log(vicky.name); // -> Logs 'Vicky'
+console.log(vicky.age); // -> Logs 24
 
 /****************************************************************
                        USING OBJECT.CREATE
