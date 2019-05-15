@@ -89,9 +89,11 @@ console.log(mike.age); //-> Logs 30
 mike.greet(); //-> Logs 'hello'
 
 /*** CHALLENGE 3 of 3 ***/
-// add code here
+PersonConstructor.prototype.introduce = function() {
+  console.log(`Hi, my name is ${this.name}`);
+};
 
-// mike.introduce(); // -> Logs 'Hi, my name is Mike'
+mike.introduce(); // -> Logs 'Hi, my name is Mike'
 
 /****************************************************************
                         USING ES6 CLASSES
@@ -100,16 +102,18 @@ mike.greet(); //-> Logs 'hello'
 /*** CHALLENGE 1 of 3 ***/
 
 class PersonClass {
-  constructor() {
-    // add code here
+  constructor(name) {
+    this.name = name;
   }
 
-  // add code here
+  greet() {
+    console.log("hello");
+  }
 }
 
 // /********* Uncomment this line to test your work! *********/
 var george = new PersonClass();
-// george.greet(); // -> Logs 'hello'
+george.greet(); // -> Logs 'hello'
 
 /*** CHALLENGE 2 of 3 ***/
 
