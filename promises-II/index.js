@@ -4,42 +4,47 @@ function sayHello() {
   setTimeout(() => console.log("Hello!"), 1000);
 }
 
-// Uncomment the line below when ready
-sayHello(); // should log "Hello" after 1000ms
+// // Uncomment the line below when ready
+// sayHello(); // should log "Hello" after 1000ms
 
-// Challenge 2
-var promise = new Promise(function(resolve, reject) {
-  setTimeout(() => resolve("Resolved!"), 1000);
-});
+// // Challenge 2
+// var promise = new Promise(function(resolve, reject) {
+//   setTimeout(() => resolve("Resolved!"), 1000);
+// });
 
-// Should print out "Resolved!"
-promise.then(result => console.log(result));
+// // Should print out "Resolved!"
+// promise.then(result => console.log(result));
 
-// Challenge 3
+// // Challenge 3
 
-promise = new Promise(function(resolve, reject) {
-  reject("Rejected!");
-});
+// promise = new Promise(function(resolve, reject) {
+//   reject("Rejected!");
+// });
 
-// Should print out "Reject!"
-promise.catch(result => console.log(result));
+// // Should print out "Reject!"
+// promise.catch(result => console.log(result));
 
-// Challenge 4
+// // Challenge 4
 
-promise = new Promise(function(resolve, reject) {
-  // ADD CODE HERE
-});
+// promise = new Promise(function(resolve, reject) {
+//   resolve("Promise has been resolved!");
+// });
 
-// Uncomment the lines below when ready
-// promise.then(() => console.log('Promise has been resolved!));
+// // Uncomment the lines below when ready
+// promise.then(result => console.log(result));
 // console.log("I'm not the promise!");
 
 // Challenge 5
-function delay() {}
+function delay() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000);
+  });
+  return promise;
+}
 
 // Uncomment the code below to test
-// This code should log "Hello" after 1000ms
-// delay().then(sayHello);
+//This code should log "Hello" after 1000ms
+delay().then(sayHello);
 
 // Challenge 6
 //
