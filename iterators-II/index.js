@@ -76,15 +76,18 @@ console.log(iterateSet.next()); // -> should log 'y'
 // CHALLENGE 5
 
 function indexIterator(arr) {
-  // YOUR CODE HERE
+  let i = 0;
+  return {
+    next: () => [i, arr[i++]]
+  };
 }
 
 // Uncomment the lines below to test your work
-// const array5 = ['a', 'b', 'c', 'd'];
-// const iteratorWithIndex = indexIterator(array5);
-// console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
-// console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
-// console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
+const array5 = ["a", "b", "c", "d"];
+const iteratorWithIndex = indexIterator(array5);
+console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
 
 // CHALLENGE 6
 
