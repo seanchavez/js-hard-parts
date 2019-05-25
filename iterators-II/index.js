@@ -28,39 +28,50 @@ console.log(myIterator()); // -> should log 'd'
 // CHALLENGE 2
 
 function nextIterator(arr) {
-  // YOUR CODE HERE
+  let i = 0;
+  return { next: () => arr[i++] };
 }
 
 // Uncomment the lines below to test your work
-// const array3 = [1, 2, 3];
-// const iteratorWithNext = nextIterator(array3);
-// console.log(iteratorWithNext.next()); // -> should log 1
-// console.log(iteratorWithNext.next()); // -> should log 2
-// console.log(iteratorWithNext.next()); // -> should log 3
+const array3 = [1, 2, 3];
+const iteratorWithNext = nextIterator(array3);
+console.log(iteratorWithNext.next()); // -> should log 1
+console.log(iteratorWithNext.next()); // -> should log 2
+console.log(iteratorWithNext.next()); // -> should log 3
 
 // CHALLENGE 3
 
 function sumArray(arr) {
-  // YOUR CODE HERE
-  // use your nextIterator function
+  const iterate = nextIterator(arr);
+  let sum = 0;
+  do {
+    next = iterate.next();
+    if (next) sum += next;
+  } while (next);
+  return sum;
 }
 
 // Uncomment the lines below to test your work
-// const array4 = [1, 2, 3, 4];
-// console.log(sumArray(array4)); // -> should log 10
+const array4 = [1, 2, 3, 4];
+console.log(sumArray(array4)); // -> should log 10
 
 // CHALLENGE 4
 
 function setIterator(set) {
-  // YOUR CODE HERE
+  values = [];
+  set.forEach((val1, val2, set) => {
+    values.push(val1);
+  });
+  let i = 0;
+  return { next: () => values[i++] };
 }
 
 // Uncomment the lines below to test your work
-// const mySet = new Set('hey');
-// const iterateSet = setIterator(mySet);
-// console.log(iterateSet.next()); // -> should log 'h'
-// console.log(iterateSet.next()); // -> should log 'e'
-// console.log(iterateSet.next()); // -> should log 'y'
+const mySet = new Set("hey");
+const iterateSet = setIterator(mySet);
+console.log(iterateSet.next()); // -> should log 'h'
+console.log(iterateSet.next()); // -> should log 'e'
+console.log(iterateSet.next()); // -> should log 'y'
 
 // CHALLENGE 5
 
