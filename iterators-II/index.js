@@ -1,24 +1,29 @@
 // CHALLENGE 1
 
 function sumFunc(arr) {
-  // YOUR CODE HERE
+  let sum = 0;
+  for (const el of arr) {
+    sum += el;
+  }
+  return sum;
 }
 
 // Uncomment the lines below to test your work
-// const array = [1, 2, 3, 4];
-// console.log(sumFunc(array)); // -> should log 10
+const array = [1, 2, 3, 4];
+console.log(sumFunc(array)); // -> should log 10
 
 function returnIterator(arr) {
-  // YOUR CODE HERE
+  let i = 0;
+  return () => arr[i++];
 }
 
 // Uncomment the lines below to test your work
-// const array2 = ['a', 'b', 'c', 'd'];
-// const myIterator = returnIterator(array2);
-// console.log(myIterator()); // -> should log 'a'
-// console.log(myIterator()); // -> should log 'b'
-// console.log(myIterator()); // -> should log 'c'
-// console.log(myIterator()); // -> should log 'd'
+const array2 = ["a", "b", "c", "d"];
+const myIterator = returnIterator(array2);
+console.log(myIterator()); // -> should log 'a'
+console.log(myIterator()); // -> should log 'b'
+console.log(myIterator()); // -> should log 'c'
+console.log(myIterator()); // -> should log 'd'
 
 // CHALLENGE 2
 
@@ -86,22 +91,22 @@ Words.prototype[Symbol.iterator] = function() {
 
 // CHALLENGE 7
 
-function valueAndPrevIndex(array) {}
+// function valueAndPrevIndex(array) {}
 
-const returnedSentence = valueAndPrevIndex([4, 5, 6]);
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
+// const returnedSentence = valueAndPrevIndex([4, 5, 6]);
+// console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence());
 
-//CHALLENGE 8
+// //CHALLENGE 8
 
-function* createConversation(string) {}
+// function* createConversation(string) {}
 
-console.log(createConversation("english").next());
+// console.log(createConversation("english").next());
 
-//CHALLENGE 9
-function waitForVerb(noun) {}
+// //CHALLENGE 9
+// function waitForVerb(noun) {}
 
-async function f(noun) {}
+// async function f(noun) {}
 
-f("dog");
+// f("dog");
