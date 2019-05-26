@@ -9,8 +9,8 @@ function sumFunc(arr) {
 }
 
 // Uncomment the lines below to test your work
-const array = [1, 2, 3, 4];
-console.log(sumFunc(array)); // -> should log 10
+const arr = [1, 2, 3, 4];
+console.log(sumFunc(arr)); // -> should log 10
 
 function returnIterator(arr) {
   let i = 0;
