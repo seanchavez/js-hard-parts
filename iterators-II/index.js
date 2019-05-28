@@ -98,10 +98,8 @@ function Words(string) {
 Words.prototype[Symbol.iterator] = function() {
   const words = this.str.split(" ");
   const iter = words[Symbol.iterator]();
-  //let i = 0;
-  return iter; //{
-  //   next: () => words[i++]
-  // };
+
+  return iter;
 };
 
 // Uncomment the lines below to test your work
