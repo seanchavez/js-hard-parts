@@ -18,7 +18,7 @@ function returnIterator(arr) {
 }
 
 // Uncomment the lines below to test your work
-const array2 = ["a", "b", "c", "d"];
+const array2 = ["a", "b", "c", "e"];
 const myIterator = returnIterator(array2);
 console.log(myIterator()); // -> should log 'a'
 console.log(myIterator()); // -> should log 'b'
